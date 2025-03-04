@@ -1,3 +1,4 @@
+// function som defineres album-objekterne. 
 function Album(id, artist, albumName, year, genre, trackList) {
     this.id = id;
     this.artist = artist;
