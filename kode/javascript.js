@@ -26,4 +26,13 @@ function displayAlbumCard(album, parentid) {
         `).join("")}
       </ul>
     `;
-        }
+    parentElement.appendChild(card);
+     /* Tilføjer det nyoprettede albumkort-element til det eksisterende parentElement, som er en DOM-manipulation.        Dette er den endelige handling, der gør albumkortet synligt på siden ved at placere det i den visuelle struktur.
+        */
+      }
+      // Thomas magiske kode - Det virker jo bare :-)
+      async function fetchContent(url) {
+        let request = await fetch(url);
+        let json = await request.json();
+        return json;
+      } 
