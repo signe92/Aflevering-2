@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><Aflevering-2></title>
+    <title><Musikarkiv></title>
+    <style>
+        .album {
+            margin-bottom: 20px;
+        }
+.album h2 {
+    cursor: pointer;
+    color: aqua;
+}
+.tracklist {
+    display: none;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.tracklist.show {
+    display: block;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Signe's Musikarkiv</h1>
-    </header>
-    <main id="albumGrid"></main>
-    <script src="javascript.js"></script>
+<h1>Signe's Musikarkiv</h1>
+<div id="albums"></div>
+<script src="javascript.js"></script>
 </body>
 </html>

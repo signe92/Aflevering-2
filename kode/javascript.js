@@ -36,3 +36,4 @@ function displayAlbumCard(album, parentid) {
         let json = await request.json();
         return json;
       } 
+     
