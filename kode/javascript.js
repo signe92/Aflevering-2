@@ -1,39 +1,38 @@
-// Function som defineres album-objekterne. 
-function Album(id, artist, albumName, year, genre, trackList) {
-    this.id = id;
-    this.artist = artist;
-    this.albumName = albumName;
-    this.year = year;
-    this.genre = genre;
-    this.tracklist = tracklist;
+// Function til at vise album
+function displayAlbum(album) {
+// Opret album-div
+    const albumDiv = document.createElement('div');
+    albumDiv.classList.add('album');
+
+    // Albumtitel og grundlæggende information
+const Albumtitel = document.createElement('h2');
+Albumtitel.textContent = album.album_title;
+albumDiv.appendChild(albuminfo);
+
+// Tracklist og knap til at vise/skjule trackliste
+const tracklistDiv = document.createElement('div')
+tracklistDiv.classList.add('tracklist');
+album.tracklist.forEach(track=> {
+    const trackItem = document.createElement('p');
+    trackItem.textContent = track;
+    tracklistDiv.appendChild(trackItem);
+});
+
+// Knappen til at vise eller skjule tracklisten
+const toggleButton = document.createElement('button');
+toggleButton.textContent = 'vis/skjul trackliste';
+toggleButton.addEventListener('click', function() {
+    tracklistDiv.classList.toggle('show');
+});
+
+albumDiv.appendChild(toggleButton);
+albumDiv.appendChild(tracklistDiv);
+
+// Tilføj album til hovedindholdet
+document.getElementById('albums').appendChild(albumDiv)
 }
 
-// Function der bruges til at genere HTML-strukturen.
-function displayAlbumCard(album, parentid) {
-    const parentElement = document.getElementById(parentid)
-    const card = document.createElement("div");
-    card.classList.add("album-card");
-
-    // Albumkort dannet ved brug af string interpoloration 
-    card.innerHTML = `
-      <h2>${album.albumName}</h2>
-      <p><strong>Artist:</strong> ${album.artist}</p>
-      <p><strong>Year:</strong> ${album.year}</p>
-      <p><strong>Genre:</strong> ${album.genre}</p>
-      <ul class="tracklist">
-        ${album.trackList.map(track => `
-          <li>${track.trackNumber}. ${track.trackTitle} (${track.trackTimeInSeconds} sek)</li>
-        `).join("")}
-      </ul>
-    `;
-    parentElement.appendChild(card);
-     /* Tilføjer det nyoprettede albumkort-element til det eksisterende parentElement, som er en DOM-manipulation.        Dette er den endelige handling, der gør albumkortet synligt på siden ved at placere det i den visuelle struktur.
-        */
-      }
-      // Thomas magiske kode - Det virker jo bare :-)
-      async function fetchContent(url) {
-        let request = await fetch(url);
-        let json = await request.json();
-        return json;
-      } 
-     
+// Gennemløb alle albums og vis dem
+albumsData.forEach(album => {
+    displayAlbum(album);
+});
