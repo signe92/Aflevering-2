@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><Musikarkiv></title>
-    <style>
-        .album {
-            margin-bottom: 20px;
-        }
-.album h2 {
-    cursor: pointer;
-    color: aqua;
-}
-.tracklist {
-    display: none;
-    margin-top: 10px;
-    padding-left: 20px;
-}
-.tracklist.show {
-    display: block;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musikarkiv</title>
+  <link rel="stylesheet" href="style.css"> <!-- Hvis du bruger den tidligere CSS-fil -->
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #4a90e2;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #97e0eb;
+    }
+  </style>
 </head>
 <body>
 <h1>Signe's Musikarkiv</h1>
@@ -28,4 +34,48 @@
 <script src="javascript.js"></script>
 </body>
 </html>
-<link rel="stylesheet" href="style.css">
+  <table>
+    <thead>
+      <tr>
+        <th>Album Titel</th>
+        <th>Artist</th>
+        <th>Udgivelsesår</th>
+        <th>Sangtitel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Thriller</td>
+        <td>Michael Jackson</td>
+        <td>1982</td>
+        <td>Billie Jean</td>
+      </tr>
+      <tr>
+        <td>Back in Black</td>
+        <td>AC/DC</td>
+        <td>1980</td>
+        <td>Hells Bells</td>
+      </tr>
+      <tr>
+        <td>Abbey Road</td>
+        <td>The Beatles</td>
+        <td>1969</td>
+        <td>Come Together</td>
+      </tr>
+      <tr>
+        <td>The Dark Side of the Moon</td>
+        <td>Pink Floyd</td>
+        <td>1973</td>
+        <td>Time</td>
+      </tr>
+      <tr>
+        <td>Born to Run</td>
+        <td>Bruce Springsteen</td>
+        <td>1975</td>
+        <td>Thunder Road</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
