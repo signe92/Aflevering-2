@@ -46,10 +46,6 @@ body {
     cursor: pointer;
   }
   
-  .album h2:hover {
-    color: #e74c3c; /* Giver en rød farve ved hover */
-  }
-  
   .album p {
     font-size: 14px;
     color: #7f8c8d;
@@ -92,7 +88,6 @@ body {
     background-color: #357ab7;
   }
   
-  /* Responsivitet */
   @media (max-width: 768px) {
     #albums {
       flex-direction: column;
