@@ -17,7 +17,7 @@ body {
   margin: 0;
 }
 
-/* Giver header-elementet en mørk blå baggrund, centrerer teksen og ændrer tekstfarven til hvid */
+/* Giver header-elementet en lys blå baggrund, centrerer teksen og ændrer tekstfarven til hvid */
 header {
   width: 100%;
   padding: 20px;

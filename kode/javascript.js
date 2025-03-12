@@ -46,7 +46,7 @@ function displayAlbumTable(album, parentId) {
     // .join samler alle elementerne i en samlede streng
    
    
-    // Tilføj rækken til tabellen
+    // Tilføjer rækken til tabellen
     table.appendChild(row);
     parentElement.appendChild(table); 
 }
@@ -65,7 +65,7 @@ async function fetchContent(url) {
     }
 }
 
-// Organiserer data og opretter album-objekter og viser tabeller
+// Organiserer data og opretter album-objekter og viser tabellerne
 document.addEventListener("DOMContentLoaded", () => {
     fetchContent("albums.json")
         .then(albumsData => {
@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // Opretter en tom array
             const albumObjects = [];
-            // Brug forEach til at iterere over hver albumdata i albumsData
+            // Bruger forEach til at iterere over hver albumdata i albumsData
             albumsData.forEach(data => {
-                // Opret et nyt Album-objekt med mine original album-objekter 
+                // Jeg opretter et nyt Album-objekt med mine original album-objekter 
                 const album = new Album(
                     data.id,
                     data.artistName,
@@ -108,14 +108,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     albumGrid.style.display = "none";
                     toggleButton.textContent = "Show Albums";
                 } else {
-                    // Vis albummerne igen
+                    // Viser albummerne igen
                     albumGrid.style.display = "block";
                     toggleButton.textContent = "Hide Albums";
                 }
-                // Skifter status
+                // Skifter status 
                 albumsVisible = !albumsVisible;  
             });
-            // Når albumdataene er tilføjet til siden, viser det en besked i konsollen
+            // Når albumdataene er tilføjet til siden, viser det besked i konsollen
             console.log("Albumtabeller er blevet tilføjet til DOM'en.");
         })
         // Hvis der opstår en fejl, viser det fejlinformationen i konsollen
