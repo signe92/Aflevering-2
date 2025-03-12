@@ -1,100 +1,94 @@
-/* Grundlæggende styling for hele siden */
+/* Start af stylesheet */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hele siden bruger en Arial skrifttype, har en lys blå baggrund, og teksten er i en blå farve */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  h1 {
-    text-align: center;
-    margin: 40px 0;
-    font-size: 36px;
-    color: #4a90e2;
-  }
-  
-  #albums {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* Styling for hver album */
-  .album {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    width: 280px;
-    padding: 20px;
-    transition: transform 0.3s ease;
-  }
-  
-  .album:hover {
-    transform: translateY(-10px); /* Giver en lille "løft" effekt */
-  }
-  
-  .album h2 {
-    font-size: 24px;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .album p {
-    font-size: 14px;
-    color: #7f8c8d;
-    margin-bottom: 10px;
-  }
-  
-  .album p span {
-    font-weight: bold;
-  }
-  
-  .album .tracklist {
-    display: none;
-    margin-top: 15px;
-    padding-left: 20px;
-  }
-  
-  .album .tracklist.show {
-    display: block;
-  }
-  
-  .album .tracklist p {
-    font-size: 14px;
-    color: #34495e;
-  }
-  
-  button {
-    background-color: #4a90e2;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-top: 15px;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #357ab7;
-  }
-  
-  @media (max-width: 768px) {
-    #albums {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .album {
-      width: 90%;
-    }
-  }
+  font-family: Arial, sans-serif;
+  background-color: #d9f8ff;
+  color: #1da8cf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Giver header-elementet en mørk blå baggrund, centrerer teksen og ændrer tekstfarven til hvid */
+header {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #c2f0fb;
+  color: rgb(70, 165, 255);
+}
+
+/* Skriftstørrelse */
+header h1 {
+  font-size: 2.5em;
+}
+
+/* Knap styling */
+#toggleButton {
+  padding: 10px 20px;
+  background-color: #1da8cf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+/* Ændre knappens farve */
+#toggleButton:hover {
+  background-color: #0d60fb;
+}
+
+/* Styling for albumtabellerne */
+.album-table {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px 0;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.album-table th,
+.album-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.album-table th {
+  background-color: #afc3ef;
+  color: white;
+}
+
+.album-table td {
+  background-color: #f9f9f9;
+}
+
+.album-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.album-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Styling for trackList */
+.tracklist {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.tracklist li {
+  margin-bottom: 5px;
+}
